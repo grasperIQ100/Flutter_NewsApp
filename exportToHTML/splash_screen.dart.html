@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>splash_screen.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #6aab73;}
+.s2 { color: #bcbec4;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+splash_screen.dart</font>
+</center></td></tr></table>
+<pre>
+
+
+
+
+<span class="s0">import </span><span class="s1">'dart:async'</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">'package:damn_news/view/home_screen.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter/cupertino.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter_spinkit/flutter_spinkit.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:google_fonts/google_fonts.dart'</span><span class="s2">;</span>
+
+<span class="s3">class </span><span class="s0">SplashScreen </span><span class="s3">extends </span><span class="s0">StatefulWidget </span><span class="s2">{</span>
+  <span class="s3">const </span><span class="s0">SplashScreen</span><span class="s2">({</span><span class="s3">super</span><span class="s2">.</span><span class="s0">key</span><span class="s2">});</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">State</span><span class="s2">&lt;</span><span class="s0">SplashScreen</span><span class="s2">&gt; </span><span class="s0">createState</span><span class="s2">() =&gt; </span><span class="s0">_SplashScreenState</span><span class="s2">();</span>
+<span class="s2">}</span>
+
+<span class="s3">class </span><span class="s0">_SplashScreenState </span><span class="s3">extends </span><span class="s0">State</span><span class="s2">&lt;</span><span class="s0">SplashScreen</span><span class="s2">&gt; {</span>
+
+  <span class="s0">@override</span>
+  <span class="s3">void </span><span class="s0">initState</span><span class="s2">() {</span>
+    <span class="s4">// TODO: implement initState</span>
+    <span class="s3">super</span><span class="s2">.</span><span class="s0">initState</span><span class="s2">();</span>
+    
+    <span class="s0">Timer</span><span class="s2">(</span><span class="s0">Duration</span><span class="s2">(</span><span class="s0">seconds</span><span class="s2">:</span><span class="s5">2 </span><span class="s2">), () {</span>
+      <span class="s0">Navigator</span><span class="s2">.</span><span class="s0">push</span><span class="s2">(</span><span class="s0">context</span><span class="s2">, </span><span class="s0">MaterialPageRoute</span><span class="s2">(</span><span class="s0">builder</span><span class="s2">: (</span><span class="s0">context</span><span class="s2">) =&gt; </span><span class="s0">HomeScreen</span><span class="s2">() ));</span>
+    <span class="s2">});</span>
+  <span class="s2">}</span>
+  <span class="s0">@override</span>
+  <span class="s0">Widget build</span><span class="s2">(</span><span class="s0">BuildContext context</span><span class="s2">) {</span>
+    <span class="s3">final </span><span class="s0">height </span><span class="s2">= </span><span class="s0">MediaQuery</span><span class="s2">.</span><span class="s0">sizeOf</span><span class="s2">(</span><span class="s0">context</span><span class="s2">).</span><span class="s0">height </span><span class="s2">* </span><span class="s5">1</span><span class="s2">;</span>
+    <span class="s3">final </span><span class="s0">width </span><span class="s2">= </span><span class="s0">MediaQuery</span><span class="s2">.</span><span class="s0">sizeOf</span><span class="s2">(</span><span class="s0">context</span><span class="s2">).</span><span class="s0">height </span><span class="s2">* </span><span class="s5">1</span><span class="s2">;</span>
+
+    <span class="s3">return </span><span class="s0">Scaffold</span><span class="s2">(</span>
+      <span class="s0">body</span><span class="s2">: </span><span class="s0">Container</span><span class="s2">(</span>
+        <span class="s0">child</span><span class="s2">: </span><span class="s0">Column</span><span class="s2">(</span>
+          <span class="s0">mainAxisAlignment</span><span class="s2">: </span><span class="s0">MainAxisAlignment</span><span class="s2">.</span><span class="s0">center</span><span class="s2">,</span>
+           <span class="s0">children</span><span class="s2">: [</span>
+             <span class="s0">Image</span><span class="s2">.</span><span class="s0">asset</span><span class="s2">(</span><span class="s1">'images/splash_pic.jpg'</span><span class="s2">,</span>
+             <span class="s0">fit</span><span class="s2">: </span><span class="s0">BoxFit</span><span class="s2">.</span><span class="s0">cover</span><span class="s2">,</span>
+               <span class="s0">height</span><span class="s2">: </span><span class="s0">height </span><span class="s2">* </span><span class="s5">.5</span><span class="s2">,</span>
+             <span class="s2">),</span>
+             <span class="s0">SizedBox</span><span class="s2">(</span><span class="s0">height</span><span class="s2">: </span><span class="s0">height </span><span class="s2">* </span><span class="s5">0.04</span><span class="s2">,),</span>
+             <span class="s0">Text</span><span class="s2">(</span><span class="s1">'TOP HEADLINES' </span><span class="s2">, </span><span class="s0">style</span><span class="s2">: </span><span class="s0">GoogleFonts</span><span class="s2">.</span><span class="s0">anton</span><span class="s2">(</span><span class="s0">letterSpacing</span><span class="s2">: </span><span class="s5">.6 </span><span class="s2">, </span><span class="s0">color</span><span class="s2">: </span><span class="s0">Colors</span><span class="s2">.</span><span class="s0">grey</span><span class="s2">.</span><span class="s0">shade700</span><span class="s2">),),</span>
+             <span class="s0">SizedBox</span><span class="s2">(</span><span class="s0">height</span><span class="s2">: </span><span class="s0">height </span><span class="s2">* </span><span class="s5">0.04</span><span class="s2">,),</span>
+             <span class="s0">SpinKitChasingDots</span><span class="s2">(</span>
+               <span class="s0">color</span><span class="s2">: </span><span class="s0">Colors</span><span class="s2">.</span><span class="s0">blue</span><span class="s2">,</span>
+               <span class="s0">size</span><span class="s2">: </span><span class="s5">40</span><span class="s2">,</span>
+             <span class="s2">)</span>
+
+           <span class="s2">],</span>
+        <span class="s2">),</span>
+      <span class="s2">),</span>
+    <span class="s2">);</span>
+  <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
